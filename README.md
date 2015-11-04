@@ -58,12 +58,14 @@ module.exports = function JsonOutputHook() {
   var JsonFormatter = Cucumber.Listener.JsonFormatter();
   var fs = require('fs');
   var path = require('path');
+  var destinationDirectory = 'reports/;
+  var reportFileName = 'cucumber-test-results.json';
 
   JsonFormatter.log = function (json) {
-    var destination = path.join(__dirname, '../../reports/cucumber-test-results.json');
+    var destination = path.join(__dirname, '../../'+destionationDirectory+reportFileName);
     fs.open(destination, 'w+', function (err, fd) {
       if (err) {
-        fs.mkdirsSync(destination);
+        fs.mkdirSync(destination);
         fd = fs.openSync(destination, 'w+');
       }
 
