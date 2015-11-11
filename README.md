@@ -88,11 +88,11 @@ module.exports = function JsonOutputHook() {
 };
 ```
 
-Above snippet will hook into the CucumberJS JSON formatter and save the JSON to a file called 'cucumber-test-results.json' in the './reports' folder (relative from this file's location)
+Above snippet will hook into the CucumberJS JSON formatter and save the JSON to a file called 'cucumber-test-results.json' in the './reports/one/two/' folder (relative from this file's location)
 
 #### Setting up Protractor, CucumberJS and the JSON listener
 
-In your protractor.conf.js add a reference to the hook listener (as shown above). In this example the file is found in './support'. Also make sure to set the output format to 'json'.
+In your protractor.conf.js add a reference to the hook listener (as shown above). In this example the file is found in './support/'. Also make sure to set the output format to 'json'.
 
 ```js
 cucumberOpts: {
