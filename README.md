@@ -53,35 +53,46 @@ If you're using Protractor in combination with CucumberJS there currently is [no
 It is however possible to add a listener to the CucumberJS JSON formatter and save it to a file manually. The following hook can be added to your project and included to your Protractor configuration.
 
 ```js
+var Cucumber = require('cucumber'),
+  fs = require('fs'),
+  path = require('path');
+var JsonFormatter = Cucumber.Listener.JsonFormatter();
+var reportDirectory = 'reports/one/two/';
+var reportFileName = 'cucumber-test-results.json';
+var reportDirectoryPath = path.join(__dirname, '../../' + reportDirectory);
+var reportFilePath = path.join(reportDirectoryPath + reportFileName);
+function mkdirp(path, root) {
+  var dirs, dir;
+  dirs = path.split('/');
+  dir = dirs.shift();
+  root = (root || '') + dir + '/';
+  try {
+    fs.mkdirSync(root);
+  } catch (e) {
+    if (!fs.statSync(root).isDirectory()) { throw new Error(e); }
+  }
+  return !dirs.length || mkdirp(dirs.join('/'), root);
+}
 module.exports = function JsonOutputHook() {
-  var Cucumber = require('cucumber');
-  var JsonFormatter = Cucumber.Listener.JsonFormatter();
-  var fs = require('fs');
-  var path = require('path');
-
   JsonFormatter.log = function (json) {
-    var destination = path.join(__dirname, '../../reports/cucumber-test-results.json');
-    fs.open(destination, 'w+', function (err, fd) {
+    fs.open(reportFilePath, 'w+', function (err, fd) {
       if (err) {
-        fs.mkdirsSync(destination);
-        fd = fs.openSync(destination, 'w+');
+        mkdirp(reportDirectoryPath);
+        fd = fs.openSync(reportFilePath, 'w+');
       }
-
       fs.writeSync(fd, json);
-
-      console.log('json file location: ' + destination);
+      console.log('json file location: ' + reportFilePath);
     });
   };
-
   this.registerListener(JsonFormatter);
 };
 ```
 
-Above snippet will hook into the CucumberJS JSON formatter and save the JSON to a file called 'cucumber-test-results.json' in the './reports' folder (relative from this file's location)
+Above snippet will hook into the CucumberJS JSON formatter and save the JSON to a file called 'cucumber-test-results.json' in the './reports/one/two/' folder (relative from this file's location)
 
 #### Setting up Protractor, CucumberJS and the JSON listener
 
-In your protractor.conf.js add a reference to the hook listener (as shown above). In this example the file is found in './support'. Also make sure to set the output format to 'json'.
+In your protractor.conf.js add a reference to the hook listener (as shown above). In this example the file is found in './support/'. Also make sure to set the output format to 'json'.
 
 ```js
 cucumberOpts: {
