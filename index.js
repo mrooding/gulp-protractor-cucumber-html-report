@@ -26,17 +26,24 @@ function gulpProtractorCucumberHtmlReport(opts) {
       cb(null, file);
       return;
     }
+    
+    var fileName;
 
     if (file.isBuffer()) {
       if (!opts.dest) {
         opts.dest = __dirname;
       }
-      if (!opts.filename) {
-        opts.filename = path.basename(gutil.replaceExtension(file.path, '.html'));
+      
+      if (opts.filename) {
+        fileName = opts.filename;
       }
+      else {
+        fileName = path.basename(gutil.replaceExtension(file.path, '.html'));
+      }
+      
       var testResults = JSON.parse(file.contents);
 
-      var output = path.join(opts.dest, opts.filename);
+      var output = path.join(opts.dest, fileName);
       fs.open(output, 'w+', function (err, fd) {
         if (err) {
           fs.mkdirsSync(opts.dest);
@@ -49,7 +56,7 @@ function gulpProtractorCucumberHtmlReport(opts) {
 
         cb(null, file);
       });
-
+      
     } else {
       throw new PluginError(PLUGIN_NAME, '[Error] Currently only buffers are supported');
     }
