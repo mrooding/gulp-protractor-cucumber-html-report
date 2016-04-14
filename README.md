@@ -173,11 +173,20 @@ This is all that's required to add the saved screenshots to the HTML report.
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality.
 
+## Contributors
+
+@smuldr @nicolaspayot 
+
 ## Copyright
 
 Copyright for portions of project [gulp-protractor-cucumber-html-report](https://github.com/mrooding/gulp-protractor-cucumber-html-report) are held by Robert Hilscher, 2015 as part of project [grunt-protractor-cucumber-html-report](https://github.com/robhil/grunt-protractor-cucumber-html-report). All other copyright for project [gulp-protractor-cucumber-html-report](https://github.com/mrooding/gulp-protractor-cucumber-html-report) are held by Marc Rooding, 2015.
 
 ## Release History
+
+0.1.0:
+  - Added multiple JSON files support. Thanks [Bill77](https://github.com/Bill77)!
+  - The readme example for usage with fs-extra contained a bug in which `fs.mkDirSync` took an incorrect parameter. Thanks [nicolaspayot](https://github.com/nicolaspayot) for fixing this.
+  
 0.0.9:
   - The readme now contains 2 different ways to use the JSON output hook. One using an external library and one without.
 
