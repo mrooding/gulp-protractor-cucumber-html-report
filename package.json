@@ -1,7 +1,7 @@
 {
   "name": "gulp-protractor-cucumber-html-report",
   "description": "Generate html report from JSON file returned by cucumber-js json formatter",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "homepage": "https://github.com/mrooding/gulp-protractor-cucumber-html-report",
   "author": {
     "name": "Rooding, Marc",
