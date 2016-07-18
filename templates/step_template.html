@@ -1,5 +1,20 @@
 <div class="step <%= status %>">
     <%= name %>
+    <% if (dataTable) { %>
+    <table class="table">
+        <% for(var row in dataTable) { %>
+        <tr>
+        <% for(var cell in dataTable[row].cells) { %>
+            <% if (Number(row) === 0) { %>
+                <th><%= dataTable[row].cells[cell] %></th>
+            <% } else { %>
+                <td><%= dataTable[row].cells[cell] %></td>
+            <% } %>
+        <% } %>
+        </tr>
+        <% } %>
+    </table>
+    <% } %>
     <% if (errorDetails) { %>
     <div class="error-details">
         <blockquote>

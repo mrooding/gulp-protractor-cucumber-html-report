@@ -60,13 +60,16 @@
 </div><div class="step passed">
     Given I login as teacher
     
+    
 </div><div class="step passed">
     Then I log out
+    
     
 </div></div><div class="scenario-container"><div class="scenario failed">
     Scenario: Log in as a student
 </div><div class="step failed">
     Given I login as student
+    
     
     <div class="error-details">
         <blockquote>
@@ -127,16 +130,92 @@
 </div><div class="step skipped">
     Then I log out
     
+    
 </div></div><div class="scenario-container"><div class="scenario passed">
     Scenario: Set and verify bookmark tool
 </div><div class="step passed">
     Given I login as teacher
     
+    
 </div><div class="step passed">
     When I set bookmark tool for student 1 on:
     
+    <table class="table">
+        
+        <tr>
+        
+            
+                <th>level</th>
+            
+        
+            
+                <th>unit</th>
+            
+        
+            
+                <th>lesson</th>
+            
+        
+        </tr>
+        
+        <tr>
+        
+            
+                <td>2</td>
+            
+        
+            
+                <td>5</td>
+            
+        
+            
+                <td>2</td>
+            
+        
+        </tr>
+        
+    </table>
+    
+    
 </div><div class="step passed">
     Then I should see bookmark set on:
+    
+    <table class="table">
+        
+        <tr>
+        
+            
+                <th>level</th>
+            
+        
+            
+                <th>unit</th>
+            
+        
+            
+                <th>lesson</th>
+            
+        
+        </tr>
+        
+        <tr>
+        
+            
+                <td>2</td>
+            
+        
+            
+                <td>5</td>
+            
+        
+            
+                <td>2</td>
+            
+        
+        </tr>
+        
+    </table>
+    
     
 </div></div>
 
