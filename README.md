@@ -183,6 +183,9 @@ Copyright for portions of project [gulp-protractor-cucumber-html-report](https:/
 
 ## Release History
 
+0.1.1:
+  - Display data tables in the report. Thanks [danyc](https://github.com/danyc)
+  
 0.1.0:
   - Added multiple JSON files support. Thanks [Bill77](https://github.com/Bill77)!
   - The readme example for usage with fs-extra contained a bug in which `fs.mkDirSync` took an incorrect parameter. Thanks [nicolaspayot](https://github.com/nicolaspayot) for fixing this.
