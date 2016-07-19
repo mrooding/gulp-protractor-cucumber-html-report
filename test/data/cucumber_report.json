@@ -17,6 +17,17 @@
         "type": "scenario",
         "steps": [
           {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 11258903
+            },
+            "match": {
+              "location": "...\\src\\test\\hooks.js:2"
+            }
+          },
+          {
             "name": "I login as teacher",
             "line": 4,
             "keyword": "Given ",

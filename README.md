@@ -4,6 +4,8 @@
 
 This is a stand-alone fork of [grunt-protractor-cucumber-html-report](https://github.com/robhil/grunt-protractor-cucumber-html-report)
 
+![Sample report](https://cloud.githubusercontent.com/assets/3902324/16930002/00f575c6-4d43-11e6-85fd-bcfeea694007.png "Sample report")
+
 ## Getting Started
 This plugin requires Gulp `~3.9.0`
 
