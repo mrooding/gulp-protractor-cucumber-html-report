@@ -185,10 +185,13 @@ Copyright for portions of project [gulp-protractor-cucumber-html-report](https:/
 
 ## Release History
 
+0.1.3:
+  - support cucumber 2.0. Thanks [mwoudenberg](https://github.com/mwoudenberg)
+    
 0.1.2:
-  - added sample report screenshot Thanks [danyc](https://github.com/danyc)
-  - prevent "undefined" being displayed in step name Thanks [danyc](https://github.com/danyc)
-  - ignore empty Before steps Thanks [danyc](https://github.com/danyc)
+  - added sample report screenshot. Thanks [danyc](https://github.com/danyc)
+  - prevent "undefined" being displayed in step name. Thanks [danyc](https://github.com/danyc)
+  - ignore empty Before steps. Thanks [danyc](https://github.com/danyc)
   
 0.1.1:
   - Display data tables in the report. Thanks [danyc](https://github.com/danyc)
